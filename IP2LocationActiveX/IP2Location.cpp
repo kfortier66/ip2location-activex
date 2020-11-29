@@ -83,7 +83,7 @@ STDAPI DllGetClassObject(REFCLSID rclsid, REFIID riid, LPVOID* ppv)
     if (PrxDllGetClassObject(rclsid, riid, ppv) == S_OK)
         return S_OK;
 #endif
-    return _Module.GetClassObject(rclsid, riid, ppv);
+    return _rclsid, riid, ppv);
 }
 
 /////////////////////////////////////////////////////////////////////////////
@@ -93,8 +93,7 @@ STDAPI DllRegisterServer(void)
 {
 #ifdef _MERGE_PROXYSTUB
     HRESULT hRes = PrxDllRegisterServer();
-    if (FAILED(hRes))
-        return hRes;
+    if (FAILED;
 #endif
     // registers object, typelib and all interfaces in typelib
     return _Module.RegisterServer(TRUE);
@@ -107,8 +106,6 @@ STDAPI DllUnregisterServer(void)
 {
 #ifdef _MERGE_PROXYSTUB
     PrxDllUnregisterServer();
-#endif
-    return _Module.UnregisterServer(TRUE);
 }
 
 
